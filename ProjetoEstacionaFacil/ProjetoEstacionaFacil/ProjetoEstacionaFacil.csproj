@@ -67,6 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientesConvenioController.cs" />
+    <Compile Include="Controllers\ClientesDiarioController.cs" />
+    <Compile Include="Controllers\ControleVagaController.cs" />
+    <Compile Include="Controllers\ConvenioController.cs" />
+    <Compile Include="Controllers\FluxoCaixaController.cs" />
+    <Compile Include="Controllers\FluxoEntradaSaidaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Global.asax.cs">
