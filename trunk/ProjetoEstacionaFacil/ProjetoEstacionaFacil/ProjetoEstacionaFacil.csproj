@@ -92,9 +92,16 @@
       <DependentUpon>EstacionaFacil.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Views\Convenio\Create.aspx" />
+    <Content Include="Views\Convenio\Delete.aspx" />
+    <Content Include="Views\Convenio\Details.aspx" />
+    <Content Include="Views\Convenio\Edit.aspx" />
+    <Content Include="Views\Convenio\Index.aspx" />
     <Content Include="Views\FluxoCaixa\Create.aspx" />
     <Content Include="Views\FluxoCaixa\Delete.aspx" />
+    <Content Include="Views\FluxoCaixa\Details.aspx" />
     <Content Include="Views\FluxoCaixa\Edit.aspx" />
+    <Content Include="Views\FluxoCaixa\Index.aspx" />
     <Content Include="Views\FluxoEntradaSaida\Create.aspx" />
     <Content Include="Views\FluxoEntradaSaida\Delete.aspx" />
     <Content Include="Views\FluxoEntradaSaida\Details.aspx" />

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EstacionaFacil" Class="CrudEstacionaFacil" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|EstacionaFacil.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EstacionaFacil" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TB_CLIENTES_CONVENIO" Member="TB_CLIENTES_CONVENIOs">
+    <Type Name="TB_CLIENTES_CONVENIO">
+      <Column Name="ID_Cliente_Convenio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Veiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome_Cliente_Convenio" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF_Cliente_Convenio" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RG_Cliente_Convenio" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco_Cliente_Convenio" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="Numero_Cliente_Convenio" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Bairro_Cliente_Convenio" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade_Cliente_Convenio" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado_Cliente_Convenio" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="TB_CLIENTES_CONVENIO_TB_CONTROLE_VAGA" Member="TB_CONTROLE_VAGAs" ThisKey="ID_Cliente_Convenio" OtherKey="ID_Cliente_Convenio" Type="TB_CONTROLE_VAGA" />
+      <Association Name="TB_CLIENTES_CONVENIO_TB_CONVENIO" Member="TB_CONVENIOs" ThisKey="ID_Cliente_Convenio" OtherKey="ID_Cliente_Convenio" Type="TB_CONVENIO" />
+      <Association Name="TB_CLIENTES_CONVENIO_TB_FLUXO_ENTRADA_SAIDA" Member="TB_FLUXO_ENTRADA_SAIDAs" ThisKey="ID_Cliente_Convenio" OtherKey="ID_Cliente_Convenio" Type="TB_FLUXO_ENTRADA_SAIDA" />
+      <Association Name="TB_VEICULO_TB_CLIENTES_CONVENIO" Member="TB_VEICULO" ThisKey="ID_Veiculo" OtherKey="ID_Veiculo" Type="TB_VEICULO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_VEICULOS" Member="TB_VEICULOs">
+    <Type Name="TB_VEICULO">
+      <Column Name="ID_Veiculo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Placa_Veiculo" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca_Veiculo" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="Cor_Veiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_VEICULO_TB_CLIENTES_CONVENIO" Member="TB_CLIENTES_CONVENIOs" ThisKey="ID_Veiculo" OtherKey="ID_Veiculo" Type="TB_CLIENTES_CONVENIO" />
+      <Association Name="TB_VEICULO_TB_CLIENTES_DIARIO" Member="TB_CLIENTES_DIARIOs" ThisKey="ID_Veiculo" OtherKey="ID_Veiculo" Type="TB_CLIENTES_DIARIO" />
+      <Association Name="TB_VEICULO_TB_CONTROLE_VAGA" Member="TB_CONTROLE_VAGAs" ThisKey="ID_Veiculo" OtherKey="ID_Veiculo" Type="TB_CONTROLE_VAGA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_CLIENTES_DIARIOS" Member="TB_CLIENTES_DIARIOs">
+    <Type Name="TB_CLIENTES_DIARIO">
+      <Column Name="ID_Clientes_Diarios" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Veiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome_Cliente_Diario" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Association Name="TB_CLIENTES_DIARIO_TB_CONTROLE_VAGA" Member="TB_CONTROLE_VAGAs" ThisKey="ID_Clientes_Diarios" OtherKey="ID_Clientes_Diarios" Type="TB_CONTROLE_VAGA" />
+      <Association Name="TB_CLIENTES_DIARIO_TB_FLUXO_CAIXA" Member="TB_FLUXO_CAIXAs" ThisKey="ID_Clientes_Diarios" OtherKey="ID_Clientes_Diarios" Type="TB_FLUXO_CAIXA" />
+      <Association Name="TB_CLIENTES_DIARIO_TB_FLUXO_ENTRADA_SAIDA" Member="TB_FLUXO_ENTRADA_SAIDAs" ThisKey="ID_Clientes_Diarios" OtherKey="ID_Clientes_Diarios" Type="TB_FLUXO_ENTRADA_SAIDA" />
+      <Association Name="TB_VEICULO_TB_CLIENTES_DIARIO" Member="TB_VEICULO" ThisKey="ID_Veiculo" OtherKey="ID_Veiculo" Type="TB_VEICULO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_CONTROLE_VAGAS" Member="TB_CONTROLE_VAGAs">
+    <Type Name="TB_CONTROLE_VAGA">
+      <Column Name="ID_Vagas" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Veiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Clientes_Diarios" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Cliente_Convenio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vaga" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_CLIENTES_CONVENIO_TB_CONTROLE_VAGA" Member="TB_CLIENTES_CONVENIO" ThisKey="ID_Cliente_Convenio" OtherKey="ID_Cliente_Convenio" Type="TB_CLIENTES_CONVENIO" IsForeignKey="true" />
+      <Association Name="TB_CLIENTES_DIARIO_TB_CONTROLE_VAGA" Member="TB_CLIENTES_DIARIO" ThisKey="ID_Clientes_Diarios" OtherKey="ID_Clientes_Diarios" Type="TB_CLIENTES_DIARIO" IsForeignKey="true" />
+      <Association Name="TB_VEICULO_TB_CONTROLE_VAGA" Member="TB_VEICULO" ThisKey="ID_Veiculo" OtherKey="ID_Veiculo" Type="TB_VEICULO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_CONVENIOS" Member="TB_CONVENIOs">
+    <Type Name="TB_CONVENIO">
+      <Column Name="ID_Convenio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Cliente_Convenio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Razao_Social" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_CLIENTES_CONVENIO_TB_CONVENIO" Member="TB_CLIENTES_CONVENIO" ThisKey="ID_Cliente_Convenio" OtherKey="ID_Cliente_Convenio" Type="TB_CLIENTES_CONVENIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_FLUXO_CAIXA" Member="TB_FLUXO_CAIXAs">
+    <Type Name="TB_FLUXO_CAIXA">
+      <Column Name="ID_Fluxo_Caixa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Clientes_Diarios" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="TB_FLUXO_CAIXA_TB_FLUXO_ENTRADA_SAIDA" Member="TB_FLUXO_ENTRADA_SAIDAs" ThisKey="ID_Fluxo_Caixa" OtherKey="ID_Fluxo_Caixa" Type="TB_FLUXO_ENTRADA_SAIDA" />
+      <Association Name="TB_CLIENTES_DIARIO_TB_FLUXO_CAIXA" Member="TB_CLIENTES_DIARIO" ThisKey="ID_Clientes_Diarios" OtherKey="ID_Clientes_Diarios" Type="TB_CLIENTES_DIARIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_FLUXO_ENTRADA_SAIDA" Member="TB_FLUXO_ENTRADA_SAIDAs">
+    <Type Name="TB_FLUXO_ENTRADA_SAIDA">
+      <Column Name="ID_Fluxo_E_S" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Cliente_Convenio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Clientes_Diarios" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Fluxo_Caixa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hora_Entrada" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Hora_Saida" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="TB_CLIENTES_CONVENIO_TB_FLUXO_ENTRADA_SAIDA" Member="TB_CLIENTES_CONVENIO" ThisKey="ID_Cliente_Convenio" OtherKey="ID_Cliente_Convenio" Type="TB_CLIENTES_CONVENIO" IsForeignKey="true" />
+      <Association Name="TB_CLIENTES_DIARIO_TB_FLUXO_ENTRADA_SAIDA" Member="TB_CLIENTES_DIARIO" ThisKey="ID_Clientes_Diarios" OtherKey="ID_Clientes_Diarios" Type="TB_CLIENTES_DIARIO" IsForeignKey="true" />
+      <Association Name="TB_FLUXO_CAIXA_TB_FLUXO_ENTRADA_SAIDA" Member="TB_FLUXO_CAIXA" ThisKey="ID_Fluxo_Caixa" OtherKey="ID_Fluxo_Caixa" Type="TB_FLUXO_CAIXA" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,5 @@
+C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\bin\ProjetoEstacionaFacil.dll
+C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\bin\ProjetoEstacionaFacil.pdb
+C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.dll
+C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.pdb
