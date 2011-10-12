@@ -3,3 +3,13 @@ C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\Projeto
 C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.dll
 C:\Users\Fernando\Desktop\ProjetoEstacionaFacilSVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.pdb
+C:\Users\Fernando\Desktop\SVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\bin\ProjetoEstacionaFacil.dll
+C:\Users\Fernando\Desktop\SVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\bin\ProjetoEstacionaFacil.pdb
+C:\Users\Fernando\Desktop\SVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Fernando\Desktop\SVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.dll
+C:\Users\Fernando\Desktop\SVN\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.pdb
+E:\Fernando\E-Books\Sistemas de Informação\2º Ano\Programação em Linguagem Visual\3º Bimestre\ProjetoEstacionaFacil\ProjetoEstacionaFacil\ProjetoEstacionaFacil\bin\ProjetoEstacionaFacil.dll
+E:\Fernando\E-Books\Sistemas de Informação\2º Ano\Programação em Linguagem Visual\3º Bimestre\ProjetoEstacionaFacil\ProjetoEstacionaFacil\ProjetoEstacionaFacil\bin\ProjetoEstacionaFacil.pdb
+E:\Fernando\E-Books\Sistemas de Informação\2º Ano\Programação em Linguagem Visual\3º Bimestre\ProjetoEstacionaFacil\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ResolveAssemblyReference.cache
+E:\Fernando\E-Books\Sistemas de Informação\2º Ano\Programação em Linguagem Visual\3º Bimestre\ProjetoEstacionaFacil\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.dll
+E:\Fernando\E-Books\Sistemas de Informação\2º Ano\Programação em Linguagem Visual\3º Bimestre\ProjetoEstacionaFacil\ProjetoEstacionaFacil\ProjetoEstacionaFacil\obj\Debug\ProjetoEstacionaFacil.pdb

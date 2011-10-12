@@ -14,7 +14,11 @@ namespace ProjetoEstacionaFacil.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            var tbControleVaga = estacionaFacil.TB_CONTROLE_VAGAs;
+
+            return View(tbControleVaga);
         }
 
         //
@@ -22,7 +26,11 @@ namespace ProjetoEstacionaFacil.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            var tbControleVaga = estacionaFacil.TB_CONTROLE_VAGAs;
+
+            return View(tbControleVaga);
         }
 
         //
@@ -37,12 +45,18 @@ namespace ProjetoEstacionaFacil.Controllers
         // POST: /ControleVaga/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(TB_CONTROLE_VAGA tbControleVaga)
         {
+            CrudEstacionaFacil estacionaFacil = new CrudEstacionaFacil();
+
             try
             {
                 // TODO: Add insert logic here
-
+                if (tbControleVaga.Vaga != null)
+                {
+                    estacionaFacil.TB_CONTROLE_VAGAs.InsertOnSubmit(tbControleVaga);
+                    estacionaFacil.SubmitChanges();
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -56,7 +70,11 @@ namespace ProjetoEstacionaFacil.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CONTROLE_VAGA tbControleVaga = estacionaFacil.TB_CONTROLE_VAGAs.Where(controleVaga => controleVaga.ID_Vagas == id).FirstOrDefault();
+
+            return View(tbControleVaga);
         }
 
         //
@@ -65,9 +83,16 @@ namespace ProjetoEstacionaFacil.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CONTROLE_VAGA tbControleVaga = estacionaFacil.TB_CONTROLE_VAGAs.Where(controleVaga => controleVaga.ID_Vagas == id).FirstOrDefault();
+
             try
             {
                 // TODO: Add update logic here
+                UpdateModel(tbControleVaga, collection.ToValueProvider());
+
+                estacionaFacil.SubmitChanges();
  
                 return RedirectToAction("Index");
             }
@@ -82,7 +107,11 @@ namespace ProjetoEstacionaFacil.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CONTROLE_VAGA tbControleVaga = estacionaFacil.TB_CONTROLE_VAGAs.SingleOrDefault(controleVaga => controleVaga.ID_Vagas == id);
+
+            return View(tbControleVaga);
         }
 
         //
@@ -91,9 +120,16 @@ namespace ProjetoEstacionaFacil.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CONTROLE_VAGA tbControleVaga = estacionaFacil.TB_CONTROLE_VAGAs.SingleOrDefault(controleVaga => controleVaga.ID_Vagas == id);
+
             try
             {
                 // TODO: Add delete logic here
+                estacionaFacil.TB_CONTROLE_VAGAs.DeleteOnSubmit(tbControleVaga);
+
+                estacionaFacil.SubmitChanges();
  
                 return RedirectToAction("Index");
             }

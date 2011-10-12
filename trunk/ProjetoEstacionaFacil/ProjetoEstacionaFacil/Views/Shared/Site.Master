@@ -28,6 +28,9 @@
                     <li><%: Html.ActionLink("Entrada e Saida", "Create", "FluxoEntradaSaida")%></li>
                     <li><%: Html.ActionLink("Caixa", "Create", "FluxoCaixa")%></li>
                     <li><%: Html.ActionLink("Convenios", "Create", "Convenio")%></li>
+                    <li><%: Html.ActionLink("Vagas", "Create", "ControleVaga")%></li>
+                    <li><%: Html.ActionLink("Clientes Diario", "Create", "ClientesDiario")%></li>
+                    <li><%: Html.ActionLink("Clientes Convenio", "Create", "ClientesConvenio")%></li>
                 </ul>
             
             </div>
