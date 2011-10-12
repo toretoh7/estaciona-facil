@@ -92,21 +92,6 @@
       <DependentUpon>EstacionaFacil.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Views\ClientesConvenio\Create.aspx" />
-    <Content Include="Views\ClientesConvenio\Delete.aspx" />
-    <Content Include="Views\ClientesConvenio\Details.aspx" />
-    <Content Include="Views\ClientesConvenio\Edit.aspx" />
-    <Content Include="Views\ClientesConvenio\Index.aspx" />
-    <Content Include="Views\ClientesDiario\Create.aspx" />
-    <Content Include="Views\ClientesDiario\Delete.aspx" />
-    <Content Include="Views\ClientesDiario\Details.aspx" />
-    <Content Include="Views\ClientesDiario\Edit.aspx" />
-    <Content Include="Views\ClientesDiario\Index.aspx" />
-    <Content Include="Views\ControleVaga\Create.aspx" />
-    <Content Include="Views\ControleVaga\Delete.aspx" />
-    <Content Include="Views\ControleVaga\Details.aspx" />
-    <Content Include="Views\ControleVaga\Edit.aspx" />
-    <Content Include="Views\ControleVaga\Index.aspx" />
     <Content Include="Views\Convenio\Create.aspx" />
     <Content Include="Views\Convenio\Delete.aspx" />
     <Content Include="Views\Convenio\Details.aspx" />
@@ -175,7 +160,6 @@
       <DependentUpon>EstacionaFacil.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

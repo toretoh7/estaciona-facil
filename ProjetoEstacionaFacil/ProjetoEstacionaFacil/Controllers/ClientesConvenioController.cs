@@ -14,7 +14,11 @@ namespace ProjetoEstacionaFacil.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            var tbClienteConvenio = estacionaFacil.TB_CLIENTES_CONVENIOs;
+
+            return View(tbClienteConvenio);
         }
 
         //
@@ -22,7 +26,11 @@ namespace ProjetoEstacionaFacil.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            var tbClienteConvenio = estacionaFacil.TB_CLIENTES_CONVENIOs;
+
+            return View(tbClienteConvenio);
         }
 
         //
@@ -37,11 +45,18 @@ namespace ProjetoEstacionaFacil.Controllers
         // POST: /ClientesConvenio/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(TB_CLIENTES_CONVENIO tbClienteConvenio)
         {
+            CrudEstacionaFacil estacionaFacil = new CrudEstacionaFacil();
+
             try
             {
                 // TODO: Add insert logic here
+                if (tbClienteConvenio.Nome_Cliente_Convenio != null)
+                {
+                    estacionaFacil.TB_CLIENTES_CONVENIOs.InsertOnSubmit(tbClienteConvenio);
+                    estacionaFacil.SubmitChanges();
+                }
 
                 return RedirectToAction("Index");
             }
@@ -56,7 +71,11 @@ namespace ProjetoEstacionaFacil.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CLIENTES_CONVENIO tbClienteConvenio = estacionaFacil.TB_CLIENTES_CONVENIOs.Where(clienteConvenio => clienteConvenio.ID_Cliente_Convenio == id).FirstOrDefault();
+
+            return View(tbClienteConvenio);
         }
 
         //
@@ -65,9 +84,16 @@ namespace ProjetoEstacionaFacil.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CLIENTES_CONVENIO tbClienteConvenio = estacionaFacil.TB_CLIENTES_CONVENIOs.Where(clienteConvenio => clienteConvenio.ID_Cliente_Convenio == id).FirstOrDefault();
+
             try
             {
                 // TODO: Add update logic here
+                UpdateModel(tbClienteConvenio, collection.ToValueProvider());
+
+                estacionaFacil.SubmitChanges();
  
                 return RedirectToAction("Index");
             }
@@ -82,7 +108,11 @@ namespace ProjetoEstacionaFacil.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CLIENTES_CONVENIO tbClienteConvenio = estacionaFacil.TB_CLIENTES_CONVENIOs.SingleOrDefault(clienteConvenio => clienteConvenio.ID_Cliente_Convenio == id);
+
+            return View(tbClienteConvenio);
         }
 
         //
@@ -91,9 +121,16 @@ namespace ProjetoEstacionaFacil.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
+            var estacionaFacil = new CrudEstacionaFacil();
+
+            TB_CLIENTES_CONVENIO tbClienteConvenio = estacionaFacil.TB_CLIENTES_CONVENIOs.SingleOrDefault(clienteConvenio => clienteConvenio.ID_Cliente_Convenio == id);
+
             try
             {
                 // TODO: Add delete logic here
+                estacionaFacil.TB_CLIENTES_CONVENIOs.DeleteOnSubmit(tbClienteConvenio);
+
+                estacionaFacil.SubmitChanges();
  
                 return RedirectToAction("Index");
             }
